@@ -1,4 +1,4 @@
-# How Has Voting Behaviour in Nigeria Changed? (2015–2023)
+# Nigerian Elections Analysis
 
 A data analytics portfolio project exploring changes in voter participation, party competition, state-level voting patterns and electoral outcomes across Nigeria's 2015, 2019 and 2023 presidential elections.
 
