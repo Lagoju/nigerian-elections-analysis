@@ -6,17 +6,17 @@ This project examines how voting behaviour in Nigeria changed across the 2015, 2
 
 The analysis was completed using **Python** for data preparation, statistical analysis and clustering, and **Power BI** for interactive reporting.
 
-The central question is:
+The central question behind the project is:
 
 > **How has voting behaviour in Nigeria changed between the 2015, 2019 and 2023 presidential elections?**
 
-The project focuses on observable changes in the available election data. It does not attempt to establish why individual voters made particular choices, and statistical associations are not interpreted as proof of causation.
+Before proceeding, I must highlight that this project focuses on observable changes in the available election data. It does not attempt to establish why individual voters made particular choices, and statistical associations and correlations are not interpreted as proof of causation.
 
-## Project Objectives
+## Objectives
 
 - Compare registered voters, accredited voters, votes cast, valid votes and rejected ballots across the three elections.
 - Examine changes in APC and PDP support using a comparable party grouping across election years.
-- Examine the broader party landscape in 2023, including LP and NNPP.
+- Higlight the broader party landscape in 2023, including LP and NNPP.
 - Identify states where the presidential winner changed between elections.
 - Measure electoral volatility and compare it with winner-switching patterns.
 - Explore differences in voting patterns across Nigeria's geopolitical zones.
@@ -40,7 +40,7 @@ The project focuses on observable changes in the available election data. It doe
 
 The project uses election-result material from the Independent National Electoral Commission (INEC) and structured secondary datasets used during the collection and harmonisation process.
 
-| Election / dataset | Use in the project |
+| Election dataset | Use in the project |
 |---|---|
 | INEC 2015 Presidential Election Summary | 2015 national and state presidential results |
 | INEC 2019 General Election Report | 2019 election results and validation reference |
@@ -71,7 +71,7 @@ The separate 2023 polling-unit dataset contains **123,918 records**. It is analy
 | Winner switching | A change in the party with the highest vote total in a state between two elections |
 | Electoral volatility | A Pedersen-style measure of the aggregate change in party vote shares between elections |
 
-### Comparable party grouping
+### Comparable Party Grouping
 
 To compare the three elections on a consistent basis, the analysis groups votes into **APC, PDP and Other**. In this comparison, `Other` includes all votes outside APC and PDP, including LP and NNPP in 2023.
 
@@ -108,13 +108,11 @@ Some figures in the working dataset differ from the corresponding INEC reference
 
 These differences may reflect source definitions, aggregation or transcription differences. They are retained as a data-quality consideration and should be reconciled before the figures are used for official reporting. The README does not silently substitute one source's values for another.
 
-The project notes also distinguish the corrected 2015 PDP share (approximately **44.96%**) from an earlier erroneous table value.
-
 ## Python Analysis
 
 The analysis notebook is organised into sections covering data preparation, descriptive analysis, state comparisons, polling-unit analysis, regression and clustering.
 
-### National electoral trends
+### National Electoral trends
 
 The national comparison indicates that the registered electorate expanded while accreditation and turnout declined.
 
@@ -208,7 +206,7 @@ The project flagged **7,951 records (approximately 6.4%)** where the combined vo
 
 Coverage is uneven across states. The project notes a range from approximately **1.98% in Zamfara to 91.90% in Ekiti** for the source classification used in its coverage check. This coverage measure describes the share of records cross-checked under that source classification; it should not be interpreted as proof that the remaining polling units did not exist or did not report results.
 
-### Exploratory regression
+### Exploratory Regression
 
 The project uses state-level regression models to explore relationships between changes in party vote share and selected electoral indicators. The small sample size (37 states/reporting units) limits the strength and generalisability of these models.
 
@@ -218,11 +216,11 @@ Selected results documented in the project include:
 - The PDP change model has an R² of approximately **0.506**. The turnout coefficient is reported as approximately -244.22 with a p-value of 0.008; the winning-margin p-value is approximately 0.065 and the ENP p-value approximately 0.887.
 - A leave-one-out check for Rivers changes the APC model R² from approximately 0.258 to 0.347, indicating that individual states can materially affect model fit.
 
-These are exploratory associations, not causal estimates. The small number of observations, model specification and potential influence of individual states should be considered when interpreting the results.
+These are exploratory associations, not causal estimates. The small number of observations, model specification and potential influence of individual states were considered when interpreting the results.
 
-### Electoral clustering
+### Electoral Clustering
 
-K-means clustering groups the 37 states/reporting units into six clusters using standardised changes in APC share, PDP share and comparable ENP between 2019 and 2023.
+Perhaps the most exciting aspect of the project, K-means clustering groups the 37 states/reporting units into six clusters using standardised changes in APC share, PDP share and comparable ENP between 2019 and 2023.
 
 | Cluster | Number of states | Profile from project analysis |
 |---|---:|---|
@@ -249,7 +247,7 @@ The Power BI report presents the analysis across nine pages.
 | 6. 2023 Presidential Election | Full party landscape | National party shares, state winner map and party shares across states |
 | 7. Polling-Unit Analysis | Disaggregated results | Polling-unit wins by party, winner distribution by state and votes-exceeding-accredited data-quality flags |
 | 8. Electoral Clusters | State groupings | Cluster sizes, cluster profiles and geographic cluster map |
-| 9. Methodology & Data Quality | Trust and limitations | Sources, validation checks, coverage and analytical limitations |
+
 
 ### Screenshots
 
@@ -291,7 +289,7 @@ The Power BI model is organised around dimension and fact tables.
 - `fact_polling_unit`
 - `fact_pu_coverage`
 
-The model includes 37 states/reporting units, three elections and five party categories. The principal fact-table row counts documented during the project are:
+The model includes 36 states and FCT, three elections and five party categories. The principal fact-table row counts documented during the project are:
 
 | Table | Rows |
 |---|---:|
@@ -311,13 +309,12 @@ nigeria-election-analysis/
 │
 ├── README.md
 ├── notebooks/
-│   └── Master(2).ipynb
+│   └── Master.ipynb
 │
 ├── data/
 │   ├── raw/
-│   ├── processed/
-│   └── outputs/
-│
+│   └──cleaned/
+│    │
 ├── powerbi/
 │   ├── Nigeria_Election_Analysis.pbix
 │   └── screenshots/
@@ -330,20 +327,18 @@ nigeria-election-analysis/
 │       ├── 06-2023-presidential-election.png
 │       ├── 07-polling-unit-analysis.png
 │       ├── 08-electoral-clusters.png
-│       └── 09-methodology-data-quality.png
+│      
 │
-└── outputs/
-    └── analysis_tables/
+└── images/
+│       ├── executive-summary.png
+│       ├── national-electoral-trends.png
+│       ├── state-level-voting-behaviour.png
+│       ├── geographic-patterns.png
+│       ├── electoral-volatility.png
+│       ├── 2023-presidential-election.png
+│       ├── polling-unit-analysis.png
+│       ├── electoral-clusters.png
 ```
-
-The notebook currently references a local Windows data directory:
-
-```python
-DATA_DIR = Path("C:/Users/RAiD3N/Pictures/Elections/data/")
-```
-
-That path is specific to the original working environment. To make the notebook reproducible by others, change it to a project-relative path (for example, `Path("../data/")` from the notebook directory) and include clear instructions about where the required input files should be placed. Do not commit private or restricted source files without checking their redistribution terms.
-
 ## Tools and Skills Demonstrated
 
 - **Python:** pandas, NumPy, Matplotlib, SciPy, scikit-learn and statsmodels.
@@ -355,7 +350,7 @@ That path is specific to the original working environment. To make the notebook 
 - **Business intelligence:** Power BI data modelling, DAX measures, report design and interactive visualisation.
 - **Analytical communication:** translating data patterns into findings while documenting uncertainty and limitations.
 
-## Limitations
+## Limitations Of The Project
 
 1. **Source comparability:** The three election datasets were assembled from sources with differences in structure and available fields. Harmonisation improves comparability but does not remove every source-definition issue.
 2. **National figure discrepancies:** Some working figures differ from INEC references. These differences are documented and should be reconciled before official use.
@@ -367,7 +362,7 @@ That path is specific to the original working environment. To make the notebook 
 8. **Clustering interpretation:** Clusters depend on the selected variables, scaling and chosen number of clusters. They are descriptive groupings, not explanations of voter behaviour.
 9. **Ecological inference:** State-level patterns cannot be used to infer the motivations or behaviour of individual voters.
 
-## Conclusion
+## Overall Conclusion
 
 Across the 2015–2023 period, the analysis shows a larger registered electorate alongside declining accreditation and turnout. The 2023 presidential election also presents a more fragmented party landscape than the earlier elections in the comparable analysis, with LP and NNPP becoming significant parts of the full-party picture. State-level winner switching increased sharply between 2019 and 2023, and states that changed winner had higher average electoral volatility in the project dataset.
 
@@ -377,24 +372,23 @@ These findings describe changes in recorded election outcomes. Understanding the
 
 The project source material includes:
 
-- Independent National Electoral Commission (INEC), 2015 Presidential Election Summary.
-- Independent National Electoral Commission (INEC), 2019 General Election Report.
-- Independent National Electoral Commission (INEC), 2023 General Election Report, Annexure 2.
-- Nigeria2.0 structured election data and related documentation.
-- Stears election-data material consulted during source investigation.
-- European Union Election Observation Mission (EU EOM), 2019 and 2023 reports.
-- National Democratic Institute (NDI) / International Republican Institute (IRI), 2023 election-related reporting.
+- Independent National Electoral Commission (INEC), 2015 Presidential Election Summary(https://collata.ng/sources).
+- Independent National Electoral Commission (INEC), 2019 General Election Report(https://inecnigeria.org/wp-content/uploads/2020/11/REPORT-OF-THE-2019-GENERAL-ELECTION.pdf).
+- Independent National Electoral Commission (INEC), 2023 General Election Report, Annexure 2(https://wp1.inecnigeria.org/wp-content/uploads/2024/02/2023-GENERAL-ELECTION-REPORT-1.pdf).
+- Nigeria2.0 structured election data and related documentation(https://nigeria2.com/elections/results).
+- Stears election-data material consulted during source investigation(https://open-data.stears.co/elections/nigeria-presidential-elections).
 
-Consult the original publications and dataset documentation for authoritative figures, definitions and permitted reuse. Source links should be added to the repository only after verifying the exact documents and URLs used.
+Consult the original publications and dataset documentation for authoritative figures, definitions and permitted reuse. 
 
 ## Disclaimer
 
 This is an independent portfolio and learning project. It is an analysis of compiled election-result data, not an official publication by INEC or any other election-management body. Figures and conclusions are subject to the source, harmonisation and coverage limitations described above. The analysis does not make claims of electoral fraud or infer individual voter motivations.
+Furthermore, while this project identifies associations and correlations within the data, these findings should not be interpreted as evidence of causation. The author accepts no responsibility for conclusions drawn from the findings when they are used or presented outside their intended analytical context.
 
 ## Author
 
-**[Your Name]**
+**Jonah Peter**
 
 Junior Data Analyst | Python | Power BI | Data Analysis
 
-Add your preferred contact details and portfolio links here.
+
