@@ -1,5 +1,5 @@
 # Nigeria Presidential Election Analysis (2015–2023)
-
+![Nigerian Election Analysis](images/executive_summary.png)
 ## Project Overview
 
 This project examines how voting behaviour in Nigeria changed across the 2015, 2019 and 2023 presidential elections. It combines national and state-level election results with a separate 2023 polling-unit dataset to investigate turnout, party support, electoral competition, changes in state winners and patterns of electoral volatility.
@@ -251,15 +251,54 @@ The Power BI report presents the analysis across nine pages.
 
 ### Dashboard Screenshots
 
-
+### 1. Executive Summary
 ![Nigerian Election Analysis](images/executive_summary.png)
+
+-Highlights the major changes in voter participation, party performance and electoral competitiveness across the 2015, 2019 and 2023 presidential elections.
+-Summarises the decline in turnout and the growing shift away from the traditional two-party dominance.
+
+### 2. National Electoral Trends
 ![Nigerian Election Analysis](images/electoral_trends.png)
+
+-Examines national changes in registered voters, accredited voters, turnout, valid votes and rejected ballots across the three election cycles.
+-Highlights the widening gap between voter registration and actual participation.
+
+### 3. State-Level Voting Behaviour
 ![Nigerian Election Analysis](images/voting_behaviour.png)
+
+-Compares party performance and winning margins across states.
+-Identifies states with significant changes in party vote share and electoral competitiveness, particularly between 2019 and 2023.
+
+### 4. Geographic Patterns in Presidential Voting
 ![Nigerian Election Analysis](images/geographic_patterns.png)
+
+-Explores how voting behaviour differs across Nigeria's geopolitical zones and states.
+-Highlights regional variations in party support, electoral performance and voter turnout.
+
+### 5. Electoral Volatility
 ![Nigerian Election Analysis](images/electoral_volatility.png)
+
+-Measures changes in party vote share between consecutive elections.
+-Compares electoral volatility across states and examines its relationship with changes in state-level election winners.
+
+### 6. The 2023 Presidential Election
 ![Nigerian Election Analysis](images/2023_elections.png)
+
+-Provides a closer look at the distribution of votes among the major political parties in 2023.
+-Highlights the emergence of stronger third-party competition and the geographic distribution of party support.
+
+### 7. Polling-Unit Deep Dive
 ![Nigerian Election Analysis](images/polling_units.png)
+
+-Examines polling-unit-level voting patterns, including party performance and polling-unit winners.
+-Highlights data-quality flags and variations in polling-unit result coverage across states.
+
+### 8. Electoral Clusters
 ![Nigerian Election Analysis](images/electoral_clusters.png)
+
+Groups states according to similarities in changes in party vote share and electoral competitiveness between 2019 and 2023.
+
+Uses clustering to identify distinct patterns of electoral change across the 36 states and the FCT.
 
 ## Data Model
 
