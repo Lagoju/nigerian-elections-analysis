@@ -252,7 +252,7 @@ The Power BI report presents the analysis across nine pages.
 ### Dashboard Screenshots
 
 
-- `executive-summary.png`
+- `executive_summary.png`
 - `02-national-electoral-trends.png`
 - `03-state-level-voting-behaviour.png`
 - `04-geographic-patterns.png`
