@@ -249,12 +249,10 @@ The Power BI report presents the analysis across nine pages.
 | 8. Electoral Clusters | State groupings | Cluster sizes, cluster profiles and geographic cluster map |
 
 
-### Screenshots
+### Dashboard Screenshots
 
-Add report screenshots to `powerbi/screenshots/` using the filenames below. The image links will display once the corresponding files are included in the repository.
 
-- `dashboard-overview.png`
-- `01-executive-summary.png`
+- `executive-summary.png`
 - `02-national-electoral-trends.png`
 - `03-state-level-voting-behaviour.png`
 - `04-geographic-patterns.png`
