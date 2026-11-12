@@ -252,21 +252,14 @@ The Power BI report presents the analysis across nine pages.
 ### Dashboard Screenshots
 
 
-- `![Nigerian Election Analysis](images/executive_summary.png)`
-- `02-national-electoral-trends.png`
-- `03-state-level-voting-behaviour.png`
-- `04-geographic-patterns.png`
-- `05-electoral-volatility.png`
-- `06-2023-presidential-election.png`
-- `07-polling-unit-analysis.png`
-- `08-electoral-clusters.png`
-- `09-methodology-data-quality.png`
-
-Example Markdown image syntax:
-
-```md
-![Executive Summary](powerbi/screenshots/01-executive-summary.png)
-```
+![Nigerian Election Analysis](images/executive_summary.png)
+![Nigerian Election Analysis](images/electoral_trends.png)
+![Nigerian Election Analysis](images/voting_behaviour.png)
+![Nigerian Election Analysis](images/geographic_patterns.png)
+![Nigerian Election Analysis](images/electoral_volatility.png)
+![Nigerian Election Analysis](images/2023_elections.png)
+![Nigerian Election Analysis](images/polling_units.png)
+![Nigerian Election Analysis](images/electoral_clusters.png)
 
 ## Data Model
 
